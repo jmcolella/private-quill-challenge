@@ -37,7 +37,6 @@ const formatArray = ( string ) => {
   for ( let i = 0; i < string.length; i++ ) {
     if ( string[i] === "\n" ) {
       string = string.replace(string[i], " ");
-      debugger;
     }
   }
 
@@ -49,10 +48,7 @@ const compareLogic = ( initial, change ) => {
   let changeArr = formatArray( change );
   let finalArr = [];
 
-  debugger;
-
   for ( let i = 0; i < initialArr.length; i++ ) {
-    // issues with new line characters
     // how to put together a series of comma changes?
     if ( initialArr[i] !== changeArr[i] ) {
       finalArr.push(
