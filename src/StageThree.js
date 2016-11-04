@@ -7,7 +7,6 @@ import'./App.css';
 class StageThree extends Component {
   render() {
     let { compare } = this.props;
-    debugger;
     return (
       <div className="container">
         <form>
