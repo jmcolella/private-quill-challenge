@@ -51,12 +51,21 @@ const compareLogic = ( initial, change ) => {
   for ( let i = 0; i < initialArr.length; i++ ) {
     // how to put together a series of comma changes?
     if ( initialArr[i] !== changeArr[i] ) {
-      finalArr.push(
-        {
-          initial: initialArr[i],
-          change: changeArr[i],
-        }
-      )
+      if ( initialArr[i].includes(",") && !changeArr[i].includes(",") ){
+        finalArr.push(
+          {
+            initial: initialArr[i] + " " + initialArr[i+1],
+            change: changeArr[i] + " " + changeArr[i+1],
+          }
+        )
+      } else {
+        finalArr.push(
+          {
+            initial: initialArr[i],
+            change: changeArr[i],
+          }
+        )
+      }
     }
   }
   return finalArr;
